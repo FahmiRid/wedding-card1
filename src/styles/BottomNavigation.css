@@ -1,0 +1,17 @@
+/* src/components/BottomNavigation.css */
+.bottom-navigation {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  .nav-item {
+    width: 14%;
+    padding: 10px;
+  }
+  

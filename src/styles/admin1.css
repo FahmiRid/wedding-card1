@@ -1,0 +1,164 @@
+:root {
+    --yellow: linear-gradient(180deg, #F8D49A -146.42%, #FAD79D -46.42%);
+    --orange: #fca61f;
+    --black: #242d49;
+    --gray: #788097;
+    --purple: linear-gradient(180deg, #BB67FF 0%, #C484F3 100%);
+    --pink: #FF919D;
+    --glass: rgba(255, 255, 255, 0.54);
+    --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+    --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+    --activeItem: #f799a354;
+}
+
+.App {
+    /* padding: 0.5rem 3.5rem; */
+    color: var(--black);
+    /* background:linear-gradient(90deg, rgba(250,246,149,1) 0%, rgba(230,220,177,1) 32%, rgba(209,188,128,1) 55%, rgba(240,241,169,1) 91%, rgba(221,230,167,1) 100%); */
+    background: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.AppGlass {
+    display: grid;
+    height: 97%;
+    width: 97%;
+    background: var(--glass);
+    border-radius: 2rem;
+    gap: 16px;
+    grid-template-columns: 11rem auto 20rem;
+    overflow: hidden;
+}
+
+/* logo */
+.bars {
+    display: none;
+}
+
+.logo {
+    display: flex;
+    height: 5rem;
+    font-weight: bold;
+    font-size: 22px;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    height: 4%;
+    margin-top: -8rem;
+    /* Add this line to adjust the margin */
+}
+
+.logo>span>span {
+    color: var(--pink);
+}
+
+.logo>img {
+    width: 3rem;
+    height: 3rem;
+}
+
+
+/* .logo-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .back-button {
+    margin-right: 8rem; 
+  } */
+
+  .kad1 {
+    display: flex; /* Optional: Use flex layout for the images */
+    justify-content: center; /* Optional: Center the images horizontally */
+    margin-left: 50em; /* Adjust the left margin as needed for larger screens */
+  
+    /* Media Query for screens with a maximum width of 600px (adjust as needed) */
+    @media (max-width: 600px) {
+      flex-direction: column; /* Stack the images vertically on small screens */
+      margin-left: 0; /* Remove left margin on small screens */
+  
+      img {
+        width: 100%; /* Make the images fill the container width */
+        height: auto; /* Maintain the aspect ratio */
+      }
+    }
+  }
+
+
+@media screen and (max-width: 1200px) {
+    .menuItem>span {
+        display: none;
+    }
+
+    .logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .menuItem>span {
+        display: none;
+    }
+
+    .logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        z-index: 9;
+        background: #fbffe0;
+        width: 55%;
+        padding-right: 1rem;
+        height: 100%;
+    }
+
+    .menuItem>span {
+        display: block;
+    }
+
+    .logo {
+        display: flex;
+    }
+
+    .menu .menuItem:last-child {
+        position: relative;
+        margin-top: 6rem;
+    }
+
+    .bars {
+        display: flex;
+        position: fixed;
+        top: 2rem;
+        left: 60%;
+        background: #fbffe0;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 9;
+    }
+
+    .close {
+        left: -60%;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .AppGlass {
+        grid-template-columns: 10% 50% auto;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .AppGlass {
+        grid-template-columns: 1fr;
+    }
+}
