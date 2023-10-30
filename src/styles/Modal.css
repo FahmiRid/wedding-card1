@@ -14,8 +14,45 @@
     transform: scale(0.8);
     /* Start with a slight scaling */
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    @media (max-width: 600px) {
+    align-items: flex-start; /* Align modal content to the top on small screens */
+  }
+}
+.header-modal{
+    margin-top: 20px
+}
+ .header-modal span {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 29px;
 }
 
+.bride-men {
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.bride-men span {
+    font-family: 'Lobster Two', cursive;
+    font-size: 29px;
+}
+
+.bride-and{
+    margin-top: 20px;
+    margin-left: 105px;
+}
+ .bride-and span {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 29px;
+}
+.bride-girl {
+    margin-left: 90px;
+    margin-top: 20px;
+}
+
+.bride-girl span {
+    font-family: 'Lobster Two', cursive;
+    font-size: 29px;
+}
 .modal.active {
     opacity: 1;
     /* Set opacity to 1 when the modal is active */
@@ -28,11 +65,26 @@
     height: 50%;
     background: white;
     padding: 20px;
+    margin-top: 50px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.btn-sound {
+    margin-left: 25px;
+    margin-top: 20px;
+}
+.play-sound {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 15px;
+}
+
+.no-sound {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 15px;
 }
 
 .modal.active .modal-content {
