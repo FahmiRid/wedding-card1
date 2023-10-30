@@ -11,6 +11,9 @@
     --activeItem: #f799a354;
 }
 
+html, div {
+    scroll-behavior: smooth;
+  }
 .App {
     /* padding: 0.5rem 3.5rem; */
     color: var(--black);
