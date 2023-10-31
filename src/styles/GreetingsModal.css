@@ -110,3 +110,66 @@
     font-family: 'Cinzel Decorative', cursive;
     font-size: 20px;
 }
+.form-container{
+  margin-top: 17em;
+}
+/* Styles for the input element */
+.input-group {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.input-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.input-group input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Styles for the textarea element */
+.textarea-group {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.textarea-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.textarea-group textarea {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  background: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.data-list {
+
+}
+.data-list label {
+  color: black;
+}
