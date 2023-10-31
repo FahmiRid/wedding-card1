@@ -32,7 +32,7 @@ function Modal({ onClose }) {
         // Set isModalOpen to false to trigger the closing animation.
         setIsModalOpen(false);
         // Wait for the animation to finish before actually closing the modal.
-        setTimeout(() => onClose(), 300); // You can adjust the timing to match the CSS transition duration.
+        setTimeout(() => onClose(), 500); // You can adjust the timing to match the CSS transition duration.
     };
     return (
         <div className={`modal ${isModalOpen ? "active" : ""}`}>
