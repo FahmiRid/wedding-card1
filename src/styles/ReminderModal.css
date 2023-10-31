@@ -23,7 +23,7 @@
     position: fixed;
     background: white;
     width: 80%;
-    height: 70%;
+    height: 50%;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -34,7 +34,7 @@
 
     @media (max-width: 768px) {
         width: 80%; /* Adjust the width for smaller screens */
-        height: 70%; /* Adjust the height for smaller screens */
+        height: 50%; /* Adjust the height for smaller screens */
     }
   }
   

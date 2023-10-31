@@ -64,7 +64,7 @@ function ModalReminder({ onClose }) {
                     <p className='count-second'>{timeRemaining.seconds} seconds</p>
                 </div>
                 <div>
-                    <button onClick={openGoogleCalendar}>Calendar Save</button>
+                    
                 </div>
             </div>
         </div>
