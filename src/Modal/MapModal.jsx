@@ -45,7 +45,7 @@ function MapModal({ onClose }) {
 
                 </div>
                 <div className='google-map'>
-                    <img src={Waze} alt='close-btn' width={30} height={30} />
+                    <img src={Waze} alt='close-btn' width={40} height={40} />
                     <div className='google-font'>
                         <span >Waze</span>
                         {/* <button>Open</button> */}

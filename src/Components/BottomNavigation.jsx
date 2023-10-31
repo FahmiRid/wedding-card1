@@ -6,15 +6,26 @@ import Reminder from '../Assets/reminder2.png';
 import Contact from '../Assets/contact2.png';
 import Greetings from '../Assets/greetings2.png';
 import MapModal from '../Modal/MapModal';
+import ModalReminder from '../Modal/ModalReminder';
 
 function BottomNavigation() {
     const [isMapModalOpen, setIsMapModalOpen] = useState(false);
+    const [isReminderModalOpen, setIsReminderModalOpen] = useState(false);
+
     const openMapModal = () => {
         setIsMapModalOpen(true);
       };
     
       const closeMapModal = () => {
         setIsMapModalOpen(false);
+      };
+
+      const openReminderModal = () => {
+        setIsReminderModalOpen(true);
+      }
+
+      const closeReminderModal = () => {
+        setIsReminderModalOpen(false);
       };
     return (
         <div className="bottom-navigation">
@@ -24,9 +35,10 @@ function BottomNavigation() {
             </div>
             {isMapModalOpen && <MapModal onClose={closeMapModal} />}
             <div className="nav-item">
-                <img  className='img-reminder' src={Reminder} alt='map' width={20} height={20} />
+                <img  className='img-reminder' src={Reminder} alt='map' width={20} height={20} onClick={openReminderModal} />
                 <span>Reminder</span>
             </div>
+            {isReminderModalOpen && <ModalReminder onClose={closeReminderModal} />}
             <div className="nav-item">
                 <img className='img-class' src={Contact} alt='map' width={20} height={20} />
                 <span>Contact</span>
