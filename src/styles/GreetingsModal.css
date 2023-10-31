@@ -1,0 +1,112 @@
+/* reminderModal.css */
+.greetings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+    /* Adjust the z-index as needed to ensure the modal displays above other content. */
+  }
+  
+  .greetings-modal.active {
+    opacity: 1;
+  }
+  
+  .greetings-content {
+    position: fixed;
+    background: white;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    max-width: 80%;
+
+    @media (max-width: 768px) {
+        width: 80%; /* Adjust the width for smaller screens */
+        height: 90%; /* Adjust the height for smaller screens */
+    }
+  }
+  
+  .greetings-modal.active .greetings-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .greetings-content button {
+    background: rgba(0, 0, 0, 0);
+    border: none;
+
+    @media (max-width: 768px) {
+        padding: 10px; /* Adjust the padding for smaller screens */
+    }
+  }
+
+  .greetings-container span {
+    color: black;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+
+.image-container {
+    margin-left: 15em;
+    margin-top: -30px;
+}
+  
+
+  .header {
+    margin-left: 5em;
+    margin-top: -41px;
+  }
+
+  .header h4{
+    color:black;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 29px;
+    font-weight: 600;
+    
+  }
+
+  .countdown {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.countdown p {
+    display: inline-block; /* Use 'inline-block' to display them horizontally */
+    color: black;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.countdown .count-day {
+    color: black;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 20px;
+}
+.countdown .count-hour {
+    color: black;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 20px;
+}
+.countdown .count-hour {
+    color: black;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 20px;
+}
+.countdown .count-second {
+    color: black;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 20px;
+}
