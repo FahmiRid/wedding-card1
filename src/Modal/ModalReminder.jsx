@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/ReminderModal.css';
 import Close from '../Assets/close.png';
+import Flower from '../Assets/flower.png'
 
 function ModalReminder({ onClose }) {
     const [isOpen, setIsOpen] = useState(true);
@@ -51,6 +52,7 @@ function ModalReminder({ onClose }) {
     return (
         <div className={`reminder-modal ${isOpen ? 'active' : ''}`}>
             <div className="reminder-content">
+                
                 <button onClick={closeModal}>
                     <img src={Close} alt='close-btn' width={20} height={20} />
                 </button>

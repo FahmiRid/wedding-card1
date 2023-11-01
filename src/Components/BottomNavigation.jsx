@@ -62,7 +62,7 @@ function BottomNavigation() {
       </div>
       {isReminderModalOpen && <ModalReminder onClose={closeReminderModal} />}
       <div className="nav-item">
-        <img className='img-class' src={Contact} alt='map' width={20} height={20} onClick={openContactModal} />
+        <img className='img-contact' src={Contact} alt='map' width={20} height={20} onClick={openContactModal} />
         <span>Contact</span>
       </div>
       {isContactModalOpen && <ContactModal onClose={closeContactModal} />}

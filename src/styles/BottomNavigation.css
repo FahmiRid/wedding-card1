@@ -23,7 +23,7 @@
     font-size: 13px;
   }
   .img-class{
-    margin-left:11px;
+    margin-left:6px;
   }
   
   .img-reminder {
@@ -32,4 +32,8 @@
 
   .img-greetings {
     margin-left:24px;
+  }
+  
+  .img-contact {
+    margin-left: 20px;
   }
