@@ -31,6 +31,8 @@
     transform: translateY(-20px);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     max-width: 80%;
+    overflow-y: auto; /* Add this line to enable vertical scrolling */
+    max-height: 80vh; /* Add this line to limit the maximum height */
 
     @media (max-width: 768px) {
         width: 80%; /* Adjust the width for smaller screens */
@@ -111,7 +113,7 @@
     font-size: 20px;
 }
 .form-container{
-  margin-top: 17em;
+
 }
 /* Styles for the input element */
 .input-group {
@@ -173,3 +175,65 @@ button[type="submit"] {
 .data-list label {
   color: black;
 }
+
+/* Existing CSS styles above this point */
+
+.greeting-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.greeting {
+  border: 0px solid #ccc;
+  border-radius: 18px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  width: 90%;
+}
+.greeting span {
+  margin: 10px 0;
+  color: black;
+  font-family: 'Alex Brush', cursive;
+  font-size: 25px;
+}
+
+.greeting p {
+  margin: 10px 0;
+  color: black;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .greetings-content {
+    width: 100%;
+    height: 100%;
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .header {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .input-group label,
+  .textarea-group label {
+    font-size: 14px; /* Reduce font size for small screens */
+    margin-bottom: 3px;
+  }
+
+  .input-group input,
+  .textarea-group textarea {
+    width: 86%;
+    font-size: 14px; /* Reduce font size for small screens */
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+}
+
+
+
