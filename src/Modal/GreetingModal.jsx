@@ -12,12 +12,24 @@ const supabaseKey =
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 function GreetingModal({ onClose }) {
-  
   const [isOpen, setIsOpen] = useState(true);
   const [formData, setFormData] = useState([]);
+
+  useEffect(() => {
+    // When the component is mounted, add a small delay to show the modal with animation.
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 100);
+
+    // Clear the timeout when the component unmounts to prevent a memory leak.
+    return () => clearTimeout(timer);
+  }, []);
+
   const closeModal = () => {
     setIsOpen(false);
-    onClose();
+    setTimeout(() => {
+      onClose();
+    }, 300);
   };
 
   const fetchData = async () => {
@@ -60,53 +72,53 @@ function GreetingModal({ onClose }) {
 
   return (
     <div className={`greetings-modal ${isOpen ? "active" : ""}`}>
-        <motion.div
-                className={`reminder-modal ${isOpen ? 'active' : ''}`}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                    duration: 0.8,
-                    delay: 0.5,
-                    ease: [0, 0.71, 0.2, 1.01]
-                }}
-            >
-      <div className="greetings-content">
-        <button onClick={closeModal}>
-          <img src={Close} alt="close-btn" width={20} height={20} />
-        </button>
-        <div className="header">
-          <h4>Greetings</h4>
-        </div>
-        <div className="data-list">
-          <div className="greeting-card">
-            {formData.map(item => (
-              <div className="greeting">
-                <span>{item.description}</span>
-                <p>-{item.name}-</p>
-                <p>---------------------------------------------------</p>
+      <motion.div
+        className={`reminder-modal ${isOpen ? 'active' : ''}`}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01]
+        }}
+      >
+        <div className="greetings-content">
+          <button onClick={closeModal}>
+            <img src={Close} alt="close-btn" width={20} height={20} />
+          </button>
+          <div className="header">
+            <h4>Greetings</h4>
+          </div>
+          <div className="data-list">
+            <div className="greeting-card">
+              {formData.map(item => (
+                <div className="greeting">
+                  <span>{item.description}</span>
+                  <p>-{item.name}-</p>
+                  <p>---------------------------------------------------</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="form-container">
+            <form onSubmit={handleSubmit}>
+              <div className="input-group">
+                <input type="text" id="name" name="name" placeholder="Name" />
               </div>
-            ))}
+              <div className="textarea-group">
+                <textarea
+                  id="description"
+                  name="description"
+                  rows="4"
+                  placeholder="Greetings"
+                ></textarea>
+              </div>
+              <div className="form-group">
+                <button type="submit">Submit</button>
+              </div>
+            </form>
           </div>
         </div>
-        <div className="form-container">
-          <form onSubmit={handleSubmit}>
-            <div className="input-group">
-              <input type="text" id="name" name="name" placeholder="Name" />
-            </div>
-            <div className="textarea-group">
-              <textarea
-                id="description"
-                name="description"
-                rows="4"
-                placeholder="Greetings"
-              ></textarea>
-            </div>
-            <div className="form-group">
-              <button type="submit">Submit</button>
-            </div>
-          </form>
-        </div>
-      </div>
       </motion.div>
     </div>
   );
