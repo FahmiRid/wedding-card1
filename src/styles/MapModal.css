@@ -12,7 +12,6 @@
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   z-index: 1000;
-  /* Adjust the z-index as needed to ensure the modal displays above other content. */
 }
 
 .map-modal.active {
@@ -33,6 +32,18 @@
   max-width: 80%;
 }
 
+/* Media Query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+  .map-content {
+      width: 90%;
+      height: 30%; /* Adjust the height for smaller screens */
+  }
+
+  .google-font button {
+      margin-left: 3em;
+  }
+}
+
 .map-modal.active .map-content {
   opacity: 1;
   transform: translateY(0);
@@ -44,27 +55,21 @@
 }
 
 .google-map {
-
   margin-top: 2em;
 }
 
-
 .google-font {
-
   color: black;
   margin-left: 50px;
   margin-top: -34px;
 }
 
 .google-font button {
-
-  margin-left: 8em;
-
+  margin-left: 5em;
 }
 
 .google-font span {
   font-family: 'Lobster Two', cursive;
-  
 }
 
 .google-font .button {
@@ -87,7 +92,7 @@
   font-size: 15px;
   margin-top: -22px;
   width: 41%;
-  margin-left: 10em;
+  margin-left: 5em;
 }
 
 .icon {
@@ -126,14 +131,12 @@
 
 @keyframes shine {
   0% {
-    left: -100px;
+      left: -100px;
   }
-
   60% {
-    left: 100%;
+      left: 100%;
   }
-
   to {
-    left: 100%;
+      left: 100%;
   }
 }

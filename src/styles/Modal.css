@@ -1,87 +1,91 @@
 /* reminderModal.css */
 .reminder-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.9s ease-in-out;
-    z-index: 1000;
-    /* Adjust the z-index as needed to ensure the modal displays above other content. */
-  }
-  
-  .reminder-modal.active {
-    opacity: 1;
-    transition: opacity 0.39s ease-in-out;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.9s ease-in-out;
+  z-index: 1000;
+}
+
+.reminder-modal.active {
+  opacity: 1;
+  transition: opacity 0.39s ease-in-out;
+}
+
+.reminder-content {
+  position: fixed;
+  background: white;
+  width: 80%;
+  height: 60%;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.9s ease-in-out, transform 0.39s ease-in-out;
+  max-width: 80%;
+}
+
+/* Media Query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
   .reminder-content {
-    position: fixed;
-    background: white;
-    width: 80%;
-    height: 60%;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.9s ease-in-out, transform 0.39s ease-in-out;
-    max-width: 80%;
-
-    @media (max-width: 768px) {
-        width: 80%; /* Adjust the width for smaller screens */
-        height: 60%; /* Adjust the height for smaller screens */
-    }
-  }
-  
-  .reminder-modal.active .reminder-content {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.9s ease-in-out, transform 0.39s ease-in-out;
-  }
-  
- 
-
-  .header {
-    text-align: center;
-    margin-top: -15px;
+      width: 90%; /* Adjust the width for smaller screens */
+      height: 70%; /* Adjust the height for smaller screens */
   }
 
-  .header h1{
-    display: inline-block;
-    color:black;
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 29px;
-    font-weight: 600;
-    margin-right: 10px;
+  .btn-sound button {
+      font-size: 18px; /* Adjust the font size for smaller screens */
   }
+}
 
-  .modal-name {
-    text-align: center;
-    margin-top: 20px;
+.reminder-modal.active .reminder-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.9s ease-in-out, transform 0.39s ease-in-out;
+}
+
+.header {
+  text-align: center;
+  margin-top: -15px;
+}
+
+.header h1 {
+  display: inline-block;
+  color: black;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 29px;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.modal-name {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .modal-name p {
-    display: block; /* Use 'inline-block' to display them horizontally */
-    color: black;
-    font-family: 'Lobster Two', cursive;
-    font-size: 30px;
-    margin-right: 10px;
+  display: block;
+  color: black;
+  font-family: 'Lobster Two', cursive;
+  font-size: 30px;
+  margin-right: 10px;
 }
 
 .btn-sound {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .btn-sound button {
-    display: inline-block;
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 20px;
-    font-weight: 600;
+  display: inline-block;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 20px;
+  font-weight: 600;
 }
