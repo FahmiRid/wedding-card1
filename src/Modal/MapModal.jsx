@@ -1,5 +1,5 @@
 // MapModal.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/MapModal.css';
 import Close from '../Assets/close.png';
 import GoogleMap from '../Assets/google-map.png'
@@ -9,9 +9,21 @@ import { motion } from 'framer-motion';
 function MapModal({ onClose }) {
     const [isOpen, setIsOpen] = useState(true);
 
+    useEffect(() => {
+        // When the component is mounted, add a small delay to show the modal with animation.
+        const timer = setTimeout(() => {
+            setIsOpen(true);
+        }, 100);
+
+        // Clear the timeout when the component unmounts to prevent a memory leak.
+        return () => clearTimeout(timer);
+    }, []);
+
     const closeModal = () => {
         setIsOpen(false);
-        onClose();
+        setTimeout(() => {
+            onClose(); 
+        }, 300);
     };
 
     const openGoogleMapLink = () => {
