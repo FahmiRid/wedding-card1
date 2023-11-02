@@ -1,5 +1,5 @@
-/* Modal.js */
-.modal {
+/* reminderModal.css */
+.reminder-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,89 +10,76 @@
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-    @media (max-width: 600px) {
-    align-items: flex-start; /* Align modal content to the top on small screens */
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+    /* Adjust the z-index as needed to ensure the modal displays above other content. */
   }
-}
-.header-modal{
-    margin-top: 20px
-}
- .header-modal span {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 29px;
-}
-
-.bride-men {
-    margin-left: 100px;
-    margin-top: 20px;
-}
-
-.bride-men span {
-    font-family: 'Lobster Two', cursive;
-    font-size: 29px;
-}
-
-.bride-and{
-    margin-top: 20px;
-    margin-left: 105px;
-}
- .bride-and span {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 29px;
-}
-.bride-girl {
-    margin-left: 90px;
-    margin-top: 20px;
-}
-
-.bride-girl span {
-    font-family: 'Lobster Two', cursive;
-    font-size: 29px;
-}
-.modal.active {
-    opacity: 3;
-    /* Set opacity to 1 when the modal is active */
-    transform: scale(1);
-    /* Remove the scaling */
-}
-
-.modal-content {
-    width: 70%;
-    height: 50%;
+  
+  .reminder-modal.active {
+    opacity: 1;
+  }
+  
+  .reminder-content {
+    position: fixed;
     background: white;
+    width: 80%;
+    height: 60%;
     padding: 20px;
-    margin-top: 50px;
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    max-width: 80%;
+
+    @media (max-width: 768px) {
+        width: 80%; /* Adjust the width for smaller screens */
+        height: 60%; /* Adjust the height for smaller screens */
+    }
+  }
+  
+  .reminder-modal.active .reminder-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+ 
+
+  .header {
+    text-align: center;
+    margin-top: -15px;
+  }
+
+  .header h1{
+    display: inline-block;
+    color:black;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 29px;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+
+  .modal-name {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal-name p {
+    display: block; /* Use 'inline-block' to display them horizontally */
+    color: black;
+    font-family: 'Lobster Two', cursive;
+    font-size: 30px;
+    margin-right: 10px;
 }
 
 .btn-sound {
-    margin-left: 25px;
+    text-align: center;
     margin-top: 20px;
 }
-.play-sound {
+
+.btn-sound button {
+    display: inline-block;
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 15px;
-}
-
-.no-sound {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 15px;
-}
-
-.modal.active .modal-content {
-    opacity: 1;
-    /* Set opacity to 1 when the modal is active */
-    transform: translateY(0);
-    /* Remove the upward translation */
-}
-
-.modal-content button {
-    background: rgba(0, 0, 0, 0);
-    border: none;
+    font-size: 20px;
+    font-weight: 600;
 }
