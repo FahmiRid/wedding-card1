@@ -4,6 +4,7 @@ import '../styles/MapModal.css';
 import Close from '../Assets/close.png';
 import GoogleMap from '../Assets/google-map.png'
 import Waze from '../Assets/waze.png'
+import { motion } from 'framer-motion';
 
 function MapModal({ onClose }) {
     const [isOpen, setIsOpen] = useState(true);
@@ -26,6 +27,18 @@ function MapModal({ onClose }) {
 
     return (
         <div className={`map-modal ${isOpen ? 'active' : ''}`}>
+            <motion.div
+                className={`reminder-modal ${isOpen ? 'active' : ''}`}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.8,
+                    delay: 0.5,
+                    ease: [0, 0.71, 0.2, 1.01]
+                }}
+            >
+                
+            
             <div className="map-content">
                 <button onClick={closeModal}>
                     <img src={Close} alt='close-btn' width={20} height={20} />
@@ -59,6 +72,7 @@ function MapModal({ onClose }) {
 
                 </div>
             </div>
+            </motion.div>
         </div>
     );
 }
