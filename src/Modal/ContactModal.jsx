@@ -27,9 +27,9 @@ function ContactModal({ onClose }) {
         window.location.href = 'https://wa.link/3yyzec';
     }
 
-    const openNurul = () => {
+    const openNasir = () => {
      
-        window.location.href = 'https://wa.link/f9gbp7';
+        window.location.href = 'https://wa.link/mg29mq';
     }
 
     return (
@@ -52,15 +52,16 @@ function ContactModal({ onClose }) {
                         <img src={Whatsapp} alt='whatsapp-icon' width={30} onClick={openHasnah} />
                     </div>
                     <br />
+                    <span>Nasir</span>
+                    <div className='image-container'>
+                        <img src={Whatsapp} alt='whatsapp-icon' width={30} onClick={openNasir}/>
+                    </div>
+                    <br />
                     <span>Nafiisah</span>
                     <div className='image-container'>
                         <img src={Whatsapp} alt='whatsapp-icon' width={30} onClick={openNafiisa} />
                     </div>
-                    <br />
-                    <span>Nurul</span>
-                    <div className='image-container'>
-                        <img src={Whatsapp} alt='whatsapp-icon' width={30} onClick={openNurul}/>
-                    </div>
+                    
                 </div>
             </div>
         </div>

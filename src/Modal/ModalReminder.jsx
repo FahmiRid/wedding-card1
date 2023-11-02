@@ -52,7 +52,6 @@ function ModalReminder({ onClose }) {
     return (
         <div className={`reminder-modal ${isOpen ? 'active' : ''}`}>
             <div className="reminder-content">
-                
                 <button onClick={closeModal}>
                     <img src={Close} alt='close-btn' width={20} height={20} />
                 </button>
