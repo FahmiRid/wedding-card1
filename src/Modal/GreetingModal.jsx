@@ -17,17 +17,18 @@ function GreetingModal({ onClose }) {
     setIsOpen(false);
     onClose();
   };
+
+  const fetchData = async () => {
+    const { data, error } = await supabase.from("greetings").select("*");
+    if (data) {
+      setFormData(data);
+    } else if (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
   useEffect(() => {
     // Fetch data from your Supabase table
-    const fetchData = async () => {
-      const { data, error } = await supabase.from("greetings").select("*");
-      if (data) {
-        setFormData(data);
-      } else if (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
     fetchData();
   }, []);
   const handleSubmit = async event => {
@@ -48,6 +49,7 @@ function GreetingModal({ onClose }) {
       console.error("Error inserting data:", error);
     } else {
       console.log("Data inserted successfully:", data);
+      fetchData();
     }
 
     // Reset the form fields

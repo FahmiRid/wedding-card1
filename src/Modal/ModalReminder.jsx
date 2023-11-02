@@ -5,7 +5,7 @@ import Flower from '../Assets/flower.png'
 
 function ModalReminder({ onClose }) {
     const [isOpen, setIsOpen] = useState(true);
-    const targetDate = new Date('11/1/2023'); // Set your specific target date here
+    const targetDate = new Date('2/11/2024'); // Set your specific target date here
     const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
 
     // Function to calculate the time remaining
