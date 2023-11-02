@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../styles/GreetingsModal.css";
 import Close from "../Assets/close.png";
+import Line from '../Assets/line.png';
 import { createClient } from "@supabase/supabase-js";
-import { motion, useScroll } from "framer-motion";
+import { motion } from 'framer-motion';
+
 
 const supabaseUrl = "https://jasoibiowxdceftgeqhm.supabase.co";
 const supabaseKey =
@@ -10,7 +12,7 @@ const supabaseKey =
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 function GreetingModal({ onClose }) {
-  const { scrollYProgress } = useScroll();
+  
   const [isOpen, setIsOpen] = useState(true);
   const [formData, setFormData] = useState([]);
   const closeModal = () => {
@@ -58,11 +60,17 @@ function GreetingModal({ onClose }) {
 
   return (
     <div className={`greetings-modal ${isOpen ? "active" : ""}`}>
-      <div className="greetings-content">
         <motion.div
-          className="progress-bar"
-          style={{ scaleX: scrollYProgress }}
-        />
+                className={`reminder-modal ${isOpen ? 'active' : ''}`}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.8,
+                    delay: 0.5,
+                    ease: [0, 0.71, 0.2, 1.01]
+                }}
+            >
+      <div className="greetings-content">
         <button onClick={closeModal}>
           <img src={Close} alt="close-btn" width={20} height={20} />
         </button>
@@ -75,6 +83,7 @@ function GreetingModal({ onClose }) {
               <div className="greeting">
                 <span>{item.description}</span>
                 <p>-{item.name}-</p>
+                <p>---------------------------------------------------</p>
               </div>
             ))}
           </div>
@@ -98,6 +107,7 @@ function GreetingModal({ onClose }) {
           </form>
         </div>
       </div>
+      </motion.div>
     </div>
   );
 }
