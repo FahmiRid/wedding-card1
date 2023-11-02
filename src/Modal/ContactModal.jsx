@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/ContactModal.css';
 import Close from '../Assets/close.png';
 import Whatsapp from '../Assets/whatsapp.png';
+import { motion } from 'framer-motion';
 
 function ContactModal({ onClose }) {
     const [isOpen, setIsOpen] = useState(true);
@@ -34,6 +35,16 @@ function ContactModal({ onClose }) {
 
     return (
         <div className={`contact-modal ${isOpen ? 'active' : ''}`}>
+               <motion.div
+                className={`reminder-modal ${isOpen ? 'active' : ''}`}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.8,
+                    delay: 0.5,
+                    ease: [0, 0.71, 0.2, 1.01]
+                }}
+            >
             <div className="contact-content">
                 <button onClick={closeModal}>
                     <img src={Close} alt='close-btn' width={20} height={20} />
@@ -64,6 +75,7 @@ function ContactModal({ onClose }) {
                     
                 </div>
             </div>
+            </motion.div>
         </div>
     );
 }
