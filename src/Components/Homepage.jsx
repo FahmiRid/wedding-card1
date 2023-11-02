@@ -5,7 +5,7 @@ import BottomNavigation from "./BottomNavigation";
 import Kad from "../Assets/kad1.png";
 import Kad2 from '../Assets/kad2.png';
 import Modal from "./Modal";
-//redeploy
+//redeploy1
 export default function Admin() {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
@@ -31,7 +31,6 @@ export default function Admin() {
         <img  src={Kad} alt="Your Image Description" width={400} height={600} />
         <img src={Kad2} alt="Your Image Description" width={400} height={600} />
         </div>
-        
       </div>
     </div>
   );
