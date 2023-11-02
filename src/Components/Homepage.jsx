@@ -5,7 +5,7 @@ import BottomNavigation from "./BottomNavigation";
 import Kad from "../Assets/kad1.png";
 import Kad2 from '../Assets/kad2.png';
 import Modal from "./Modal";
-
+//redeploy
 export default function Admin() {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
