@@ -11,7 +11,9 @@ function Modal({ onClose }) {
 
     const closeModal = () => {
         setIsOpen(false);
-        onClose();
+        setTimeout(() => {
+            onClose(); 
+        }, 300);
     };
 
     useEffect(() => {
