@@ -56,11 +56,11 @@ function BottomNavigation() {
         <span>Maps</span>
       </div>
       {isMapModalOpen && <MapModal onClose={closeMapModal} />}
-      <div className="nav-item">
+      {/* <div className="nav-item">
         <img className='img-reminder' src={Reminder} alt='map' width={20} height={20} onClick={openReminderModal} />
         <span>Reminder</span>
       </div>
-      {isReminderModalOpen && <ModalReminder onClose={closeReminderModal} />}
+      {isReminderModalOpen && <ModalReminder onClose={closeReminderModal} />} */}
       <div className="nav-item">
         <img className='img-contact' src={Contact} alt='map' width={20} height={20} onClick={openContactModal} />
         <span>Contact</span>
