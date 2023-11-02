@@ -7,10 +7,22 @@ import { motion } from 'framer-motion';
 function ContactModal({ onClose }) {
     const [isOpen, setIsOpen] = useState(true);
 
+    useEffect(() => {
+        // When the component is mounted, add a small delay to show the modal with animation.
+        const timer = setTimeout(() => {
+            setIsOpen(true);
+        }, 100);
+
+        // Clear the timeout when the component unmounts to prevent a memory leak.
+        return () => clearTimeout(timer);
+    }, []);
+
 
     const closeModal = () => {
         setIsOpen(false);
-        onClose();
+        setTimeout(() => {
+            onClose(); 
+        }, 300);
     };
 
     const openFazli = () => {
