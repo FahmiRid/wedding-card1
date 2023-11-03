@@ -103,7 +103,7 @@ function GreetingModal({ onClose }) {
           <div className="form-container">
             <form onSubmit={handleSubmit}>
               <div className="input-group">
-                <input type="text" id="name" name="name" placeholder="Name" />
+                <input type="text" id="name" name="name" placeholder="Name" required />
               </div>
               <div className="textarea-group">
                 <textarea
@@ -111,6 +111,7 @@ function GreetingModal({ onClose }) {
                   name="description"
                   rows="4"
                   placeholder="Greetings"
+                  required
                 ></textarea>
               </div>
               <div className="form-group">
