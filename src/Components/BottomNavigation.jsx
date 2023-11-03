@@ -1,4 +1,3 @@
-// src/components/BottomNavigation.js
 import React, { useState } from 'react';
 import '../styles/BottomNavigation.css';
 import Map from '../Assets/map2.png';
@@ -19,18 +18,18 @@ function BottomNavigation() {
   const openMapModal = () => {
     setIsMapModalOpen(true);
   };
+
   const openReminderModal = () => {
     setIsReminderModalOpen(true);
-  }
+  };
 
   const openContactModal = () => {
     setIsContactModalOpen(true);
-  }
+  };
 
   const openGreetingModal = () => {
     setIsGreetingModalOpen(true);
-  }
-
+  };
 
   const closeMapModal = () => {
     setIsMapModalOpen(false);
@@ -48,26 +47,25 @@ function BottomNavigation() {
     setIsGreetingModalOpen(false);
   };
 
-
   return (
     <div className="bottom-navigation">
-      <div className="nav-item">
-        <img className='img-class' src={Map} alt='map' width={20} height={20} onClick={openMapModal} />
+      <div className="nav-item" onClick={openMapModal}>
+        <img className="img-class" src={Map} alt="map" width={20} height={20} />
         <span>Maps</span>
       </div>
       {isMapModalOpen && <MapModal onClose={closeMapModal} />}
-      <div className="nav-item">
-        <img className='img-reminder' src={Reminder} alt='map' width={20} height={20} onClick={openReminderModal} />
+      <div className="nav-item" onClick={openReminderModal}>
+        <img className="img-reminder" src={Reminder} alt="map" width={20} height={20} />
         <span>Reminder</span>
       </div>
       {isReminderModalOpen && <ModalReminder onClose={closeReminderModal} />}
-      <div className="nav-item">
-        <img className='img-contact' src={Contact} alt='map' width={20} height={20} onClick={openContactModal} />
+      <div className="nav-item" onClick={openContactModal}>
+        <img className="img-contact" src={Contact} alt="map" width={20} height={20} />
         <span>Contact</span>
       </div>
       {isContactModalOpen && <ContactModal onClose={closeContactModal} />}
-      <div className="nav-item">
-        <img className='img-greetings' src={Greetings} alt='map' width={20} height={20} onClick={openGreetingModal} />
+      <div className="nav-item" onClick={openGreetingModal}>
+        <img className="img-greetings" src={Greetings} alt="map" width={20} height={20} />
         <span>Greetings</span>
       </div>
       {isGreetingModalOpen && <GreetingModal onClose={closeGreetingModal} />}

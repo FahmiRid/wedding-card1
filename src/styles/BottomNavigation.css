@@ -1,39 +1,51 @@
 /* src/components/BottomNavigation.css */
 .bottom-navigation {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #9c9b9b;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #9c9b9b;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 90%;
+  border-radius: 15px;
+}
 
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.nav-item img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.nav-item span {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 12px;
+}
+
+/* Media Query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+  .bottom-navigation {
+    flex-direction: row;
+    justify-content: space-between;
   }
-  
-  
+
   .nav-item {
-    width: 14%;
-    padding: 10px;
+    width: 20%;
+  }
+
+  .nav-item img {
+    width: 25px;
+    height: 25px;
   }
 
   .nav-item span {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 13px;
+    font-size: 10px;
   }
-  .img-class{
-    margin-left:6px;
-  }
-  
-  .img-reminder {
-    margin-left:24px;
-  }
-
-  .img-greetings {
-    margin-left:24px;
-  }
-  
-  .img-contact {
-    margin-left: 20px;
-  }
+}
